@@ -8,12 +8,19 @@ output:
 ---
  
 ## Project Description
-The objective of the project is to create a tidy data set 
+The objective of the project is to create a tidy data set from the various files created by the Samsung wearable devices.
+It consists of activity types and subjects grouped as Test and Train. The assignment involved combining the files and creating another dataset which calculates the mean for the measure by activity and subject.
  
 ##Study design and data processing
  
 ###Collection of the raw data
-Description of how the data was collected.
+The raw data files were downloaded from the location https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+The file was downloaded and unzipped to a directory and then the processing is done on it.
+There are 6 activity types and 561 types of features in the raw files.
+The test and train files are separate before working on them.
+
+
  
 ###Notes on the original (raw) data 
 Some additional notes (if avaialble, otherwise you can leave this section out).
@@ -21,14 +28,20 @@ Some additional notes (if avaialble, otherwise you can leave this section out).
 ##Creating the tidy datafile
  
 ###Guide to create the tidy data file
-Description on how to create the tidy data file (1. download the data, ...)/
+Description on how to create the tidy data file:
+1. Check else download the zip file.
+2. Unzip to a directory in this case UCI HAR Dataset
+3. Combine the X test and train datasets.
+4. Then combine the Y test and train datasets
+5. Apply the activity names to the combined data set
+6. Apply the mean function to all measures by activity and subject.
  
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
+There was no cleaning required except for combining of the datasets
  
-##Description of the variables in the tiny_data.txt file
-General description of the file including:
- - Dimensions of the dataset
+##Description of the variables in the file
+
+ - Dimensions of the dataset: 180 * 563
  - Summary of the data
  - Variables present in the dataset
  
@@ -37,19 +50,6 @@ General description of the file including:
 ###Variable 1 (repeat this section for all variables in the dataset)
 Short description of what the variable describes.
  
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+All variables are means of the measures from the original data.
  
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
- 
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
- 
-##Sources
-Sources you used if any, otherise leave out.
- 
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
+
